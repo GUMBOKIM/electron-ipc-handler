@@ -1,0 +1,102 @@
+{
+	"name": "electron-ipc-handler",
+	"version": "0.1.0",
+	"description": "Type-safe Electron IPC handler with TC39 decorators, auto-registration, and code generation",
+	"license": "MIT",
+	"author": "GUMBOKIM",
+	"repository": "GUMBOKIM/electron-ipc-handler",
+	"keywords": [
+		"electron",
+		"ipc",
+		"decorator",
+		"typescript",
+		"handler"
+	],
+	"type": "module",
+	"exports": {
+		".": {
+			"browser": {
+				"types": "./dist/renderer.d.ts",
+				"import": "./dist/renderer.js",
+				"require": "./dist/renderer.cjs"
+			},
+			"types": "./dist/main.d.ts",
+			"import": "./dist/main.js",
+			"require": "./dist/main.cjs"
+		},
+		"./main": {
+			"types": "./dist/main.d.ts",
+			"import": "./dist/main.js",
+			"require": "./dist/main.cjs"
+		},
+		"./renderer": {
+			"types": "./dist/renderer.d.ts",
+			"import": "./dist/renderer.js",
+			"require": "./dist/renderer.cjs"
+		},
+		"./preload": {
+			"types": "./dist/preload.d.ts",
+			"import": "./dist/preload.js",
+			"require": "./dist/preload.cjs"
+		},
+		"./unplugin": {
+			"types": "./dist/unplugin.d.ts",
+			"import": "./dist/unplugin.js",
+			"require": "./dist/unplugin.cjs"
+		},
+		"./vite": {
+			"types": "./dist/vite.d.ts",
+			"import": "./dist/vite.js",
+			"require": "./dist/vite.cjs"
+		},
+		"./webpack": {
+			"types": "./dist/webpack.d.ts",
+			"import": "./dist/webpack.js",
+			"require": "./dist/webpack.cjs"
+		},
+		"./rollup": {
+			"types": "./dist/rollup.d.ts",
+			"import": "./dist/rollup.js",
+			"require": "./dist/rollup.cjs"
+		},
+		"./esbuild": {
+			"types": "./dist/esbuild.d.ts",
+			"import": "./dist/esbuild.js",
+			"require": "./dist/esbuild.cjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"scripts": {
+		"build": "tsup",
+		"test": "vitest run",
+		"lint": "biome check src/",
+		"lint:fix": "biome check --write src/",
+		"prepublishOnly": "pnpm build"
+	},
+	"dependencies": {
+		"@swc/core": "^1.0.0",
+		"unplugin": "^2.0.0"
+	},
+	"peerDependencies": {
+		"electron": ">=13.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.0",
+		"tsup": "^8.0.0",
+		"typescript": "^5.6.0",
+		"vitest": "^4.0.18"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@biomejs/biome",
+			"@swc/core",
+			"esbuild",
+			"electron"
+		]
+	}
+}
