@@ -1,0 +1,5 @@
+node_modules/
+out/
+.vite/
+src/renderer/.vite/
+package-lock.json

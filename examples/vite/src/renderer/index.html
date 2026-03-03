@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; script-src 'self'"
+		/>
+		<title>electron-ipc-handler example</title>
+	</head>
+	<body>
+		<h1>electron-ipc-handler Example</h1>
+
+		<h2>System</h2>
+		<p>Ping: <span id="ping-result">loading...</span></p>
+		<p>Version: <span id="version-result">loading...</span></p>
+
+		<h2>Users</h2>
+		<ul id="user-list"></ul>
+
+		<script type="module" src="./src/renderer.ts"></script>
+	</body>
+</html>
